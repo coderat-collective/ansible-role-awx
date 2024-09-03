@@ -1,21 +1,9 @@
 ---
-- name: Install dependencies
+- name: Install ansible dependencies
   ansible.builtin.apt:
     name:
-      - python3-pip
-    state: present
-    update_cache: true
-    cache_valid_time: "{{ awx_cache_valid_time }}"
-  tags:
-    - awx
-    - awx.dependencies
-
-- name: Install ansible dependencies
-  ansible.builtin.pip:
-    name:
-      - kubernetes
-      - openshift
-      - pyyaml
+      - python3-kubernetes
+      - python3-openshift
   tags:
     - awx
     - awx.dependencies
