@@ -11,11 +11,11 @@
     - awx.dependencies
 
 - name: Install ansible dependencies
-  ansible.builtin.pip:
+  ansible.builtin.apt:
     name:
-      - kubernetes
-      - openshift
-      - pyyaml
+      - python3-kubernetes
+      - python3-openshift
+      - python3-yaml
   tags:
     - awx
     - awx.dependencies
